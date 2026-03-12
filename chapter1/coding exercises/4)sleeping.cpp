@@ -1,46 +1,36 @@
+//dont use count everywhere i index itself can help me to count,just need a marker like last here
+//dont make array also to find the min or max type of question 
+//process last automatically if mark cant not be mapped 
 #include<bits/stdc++.h>
 #define endl '\n'
-using namespace std;
+#define fast ios::sync_with_stdio(false); cin.tie(nullptr)
 
-int main(){
-    cout<<"hello";
-    string s;
-    while(true){
-        cin>> s;
-        if (s[0]== 'A'){
-            break;
+using ll = long long;
+using namespace std;
+int main() {
+
+    string line;
+    cin>>line;
+    ll ans =0;
+    ll last=-1;
+    ll n = line.size();
+    for(ll i=0; i<n; i++) {
+    if(line[i]=='X'){
+        if(last==-1){
+            ans= max(ans,i-1);
         }
-        vector<pair<int,int>> count(s.size(),{0,0});
-        int m=0;
-    for(int i =0 ; m <= s.size();) {
-        if(s[i]=='.'){
-            count[i].first++;
-            ++m;
-        }
-        else if(s[i]=='X'){
-            count[i].second++;
-            ++i;
-            count[i].second++;
-            ++m;
-        }
+else{
+ans=max(ans,(i-last-2)/2);
+}
+        last=i;
     }
-    for(int j =0; j<s.size();j++){
-        if(count[j].second == 1){
-            count[j].first += -1;
-        }
-        else if(count[j].second){
-            if(count[j].first % 2==0){
-            count[j].first = count[j].first-count[j].second - 1;
-            }
-        else{
-            count[j].first = count[j].first-count[j].second;
-        }
-            
-        }
+
+        //  else if (i==(line.size()-1)){
+        //     ans=max(ans,i-last-1);
+        // }
     }
-    auto k = max_element(count.begin(),count.end());
-    cout<<k->first<<endl;
-        
-    }
-    cout<<"hello";
+    //optimized that above line as it will select only greater no.
+             ans=max(ans,n-last-2);
+    
+    cout<<ans<<endl;
 }

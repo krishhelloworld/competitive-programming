@@ -8,8 +8,8 @@ char t;
 int date, ab, hol, cla, per, mon, tcl,abl;
 int x = 2, counter = 0, i = 0;
 int nod, nod1;
-int separr[] = {7, 14, 21, 28};
-int octarr[] = {5, 12, 19, 26};
+constexpr int separr[] = {7, 14, 21, 28};
+constexpr int octarr[] = {5, 12, 19, 26};
 cout<<"test case of accuracy or approximate\n For text case of accuracy-:\n 1) no. of question wilil be high \n \t TO PROCEED WITH ACCURACY TYPE-> A \n\n For text case of approximate-:\n 1) output will give you ida about detained or not \n \t TO PROCEED WITH APPROXIMATE TYPE -> P \n\n";
 cin>>t;
 if(t == 'P'||t== 'p'){
@@ -26,7 +26,7 @@ cout<<"todays date"<<endl;
 cin>>date;
 
 while(date>31){
-    cout<<"enter valid date"<<endl;
+cout<<"enter valid date"<<endl;
 cin>>date;
 }
 
