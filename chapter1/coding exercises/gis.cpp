@@ -1,4 +1,5 @@
 //here i face difficulty to know the specific index where the last arr element was inserted 
+//i dont use the vector<ll> arr(n) because it will give wrong arr.size() in for loop
 //for the last element postition-> arr.size()-1, arr.push_back();
 #include <bits/stdc++.h>
 using namespace std;
