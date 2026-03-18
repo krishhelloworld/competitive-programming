@@ -1,5 +1,7 @@
+//here the constaint are in 2^30 -> and the input is limited to 3 -> {0,1,2,-1} definite output 
+// the play is if (condition),here you have to play with if else hence the time complexity of this alogrithm is O(3)
+//since there is no for loop here
 // EQBYXOR-Equal by XORing
-// {0,1,2,-1} definite output now the play is if (condition),here you have to play with if else 
 
 #include<bits/stdc++.h>
 #define endl '\n'
@@ -46,14 +48,6 @@ if(d<n){
 	return 1;
 }else{
 cout<<2<<endl;}
-        // ── CASE 2: Two operations needed ──────────────────
-        ll X1 = n - 1;
-        ll X2 = (n - 1) ^ d;
-        
-        cout << 2 << "\n";
-        cout << "X1 = " << X1 << "\n";
-        cout << "X2 = " << X2 << "\n";
-
 return 0;
 }
 int main(){
@@ -76,3 +70,29 @@ int main(){
 // in this problem we need to have hb= highest bit because it will be  only able to make the d
 // we cant make  4(100) from  2(010) and 3(011) they dont have 1 to make xor of d
 // Largest power of 2 → 8 (bit 3)	//hb = 1LL << (63 - __builtin_clzll(d))
+
+
+
+        // ── IF Value also needed: Two operations needed ──────────────────
+//there can be more pair ,we pick the easiest to prove
+        // ll X1 = n - 1;
+        // ll X2 = (n - 1) ^ d;
+        
+        // cout << 2 << "\n";
+        // cout << "X1 = " << X1 << "\n";
+        // cout << "X2 = " << X2 << "\n";
+
+
+//----- // Brute force to list all valid pairs (for small N, educational)
+	// vector<pair<ll,ll>> findAllPairs(ll D, ll N) {
+	//     vector<pair<ll,ll>> result;
+	//     for (ll X1 = 1; X1 < N; X1++) {
+	//         ll X2 = X1 ^ D;
+	//         if (X2 >= 1 && X2 < N) {
+	//             result.push_back({X1, X2});
+	//         }
+	//     }
+	//     return result;
+	// }
+	// ```
+
