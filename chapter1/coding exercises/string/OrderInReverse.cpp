@@ -13,7 +13,7 @@ int solve_case(){
         for(int &k : arr) cin >> k;
 
         (*max_element(arr.begin(), arr.end()) != 7) && [&](){
-            cout << "7no\n";
+            cout << "no\n";
             return 0;
         }();
 

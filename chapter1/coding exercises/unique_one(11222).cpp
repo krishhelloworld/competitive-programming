@@ -1,3 +1,6 @@
+//its unique[i].size()==maxs solve my problem of most unqiue and if draw then all of them
+// vector<set<int>> f(3); this thing was new for
+//UVa 11222 - Only I did it 
 #include<bits/stdc++.h>
 using namespace std;
 #define endl ‘n’
@@ -15,7 +18,6 @@ for(int j = 0; j < x; j++){
     f[i].insert(val);
 }
 }
- 
  
 for(int i =0; i<3;i++){
 for(auto ii : f[i]){
