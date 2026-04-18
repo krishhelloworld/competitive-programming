@@ -1,0 +1,8 @@
+scikit-learn
+seaborn
+flask
+matplotlib
+pymupdf
+selenium
+openpyxl
+memory_profiler
