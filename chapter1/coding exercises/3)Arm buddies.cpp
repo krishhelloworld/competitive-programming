@@ -5,11 +5,10 @@ using namespace std;
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
+int S, B;
 
-    while (true) {
-        int S, B;
-        cin >> S >> B;
-
+    while (cin >> S >> B) {
+        
         if (S == 0 && B == 0)
             break;
 
