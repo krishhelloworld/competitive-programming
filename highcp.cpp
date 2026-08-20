@@ -24,7 +24,7 @@ const int MOD = 1e9+7;
 
 // ---------- Stream operators ----------
 template <class A, class B> ostream& operator<<(ostream& os, const pair<A, B>& p){ return os << '(' << p.first << ", " << p.second << ')'; }
-template <class T> ostream& operator<<(ostream& os, const vector<T>& v){ os << '{'; for(auto &x:v) os << x << ','; return os << '}'; }
+    template <class T> ostream& operator<<(ostream& os, const vector<T>& v){ os << '{'; for(auto &x:v) os << x << ','; return os << '}'; }
 
 // ---------- Lambda Recursion Helper ----------
 struct Y {

@@ -38,15 +38,16 @@ vector<int> solve_case(int n)
     }
     return arr;
 }
-""
-    "5,2,5=10,lcm//the one who have most element of that key is real lcm element
-    = 5,
-    hcf ""
-        "//for hcf it is the element who have repeated in both
+// ""
+//     "5,2,5=10,lcm//the one who have most element of that key is real lcm element
+//     = 5,
+//     hcf ""
+//         "//for hcf it is the element who have repeated in both
 int  lcm(auto &v1, auto &v2, int n)
 {
     vector<int> freq1((n + 5),0), freq2((n + 5),0);
     vector<int> result;
+    int ans;
     for (auto x : v1)
     {
         freq1[x]++;
@@ -82,17 +83,17 @@ int main()
 {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    int a, b;
+    int a, b,n;
     cin >> a >> b;
     vector<int> mult1 = solve_case(a);
     vector<int> mult2 = solve_case(b);
     if (mult1.size() >= mult2.size())
     {
-        int n = mult1.size();
+         n = mult1.size();
     }
     else
     {
-        int n = mult2.size();
+        n = mult2.size();
     }
     cout << lcm(mult1, mult2, n);
 }

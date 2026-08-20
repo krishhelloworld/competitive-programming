@@ -10,7 +10,8 @@ using namespace std;
 int main() {
 
     string line;
-    cin>>line;
+
+    while(cin>>line){
     ll ans =0;
     ll last=-1;
     ll n = line.size();
@@ -33,4 +34,6 @@ ans=max(ans,(i-last-2)/2);
              ans=max(ans,n-last-2);
     
     cout<<ans<<endl;
+}
+return 0;
 }

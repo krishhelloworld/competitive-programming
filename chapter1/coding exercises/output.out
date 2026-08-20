@@ -1,0 +1,80 @@
+string/array manipulations -;
+[ALL ARE MOSTLY EASY PROBLEMS]
+#Lets play magic trick-;
+https://onlinejudge.org/external/109/10978.pdf
+-:cyclic simulations + Simulation + (Active Slots)-:
+my way!!!
+	while(true){
+		    if (slot[i] is empty) count++;
+		(i>=n) ? i=1 : i++ ;	}
+
+or more easier way
+
+	while (true) {
+	    i = (i + 1) % n;
+	    if (slot[i] is empty) count++;
+	}
+
+#special use of list -;
+brokenkey_board problem
+https://onlinejudge.org/external/119/11988.pdf
+(insertion is faster in list ),(we can use deque also but the code will be little increased, but deque is better to approch rather than list to due its poor memory complexity)
+https://github.com/krishhelloworld/competitive-programming/blob/main/chapter1/coding%20exercises/brokenKeyboardLIST.cpp
+
+https://github.com/krishhelloworld/competitive-programming/blob/main/chapter1/coding%20exercises/brokenKeyboardDQ.cpp
+
+
+#baloni problem-:
+//TEACH HOW TO SEARCH/MARK ELEMENT FAST USING VALUE BASED INDEXING IN ARRAY/BOOL
+greedy (chain/Simulation)+reuse resources:
+```
+const ll max= 1000000;
+vector<bool> err(max,0);
+int arrows=0;
+for(int j=0; j<n;j++){
+    int y= arr[j];
+if(1==err[y]){
+    err[y]=0;
+}
+else{
+    arrows++;
+}
+err[y-1]=1;
+}```
+
+#A Classic doubly linked list problem-;
+Uva armies buddies-;
+Neighbor Tracking+ Dynamic Deletion+ Implicit Linked List
+it have bunch of solution -;
+the easiest one is using set and taking lowerbound and upperbound-1 and delete element between it O(log n) 
+but using double linked list it costs O(1) per deletion 
+BEST WAY FOR tracking is FENWICK TREE AND USING DSU (WILL TALK LATER IN DEEP)
+
+#Sometime the ASCII CHARACTER CODES ALSO HELPS IN STRING PROBLEM (lapindrome ,anagram) LIKE -;
+https://www.codechef.com/problems/LAPIN
+Lapindrome string [abcba,kjhghjk]
+```
+  vector<int> freq(26,0);
+for(int i=0;i<n/2;i++)
+{
+    freq[s[i]-'a']++;
+    freq[s[n-i-1]-'a']--;
+}
+
+for(int x:freq){
+   if(x!=0){ cout<<"no";
+   ```
+
+
+
+
+Pattern	Think
+circular	modulo
+anagram	freq array
+palindrome	two pointers
+substring	sliding window
+deletion	linked list / stack
+grouping	greedy
+
+hacker rank probelem
+maths podcast in research

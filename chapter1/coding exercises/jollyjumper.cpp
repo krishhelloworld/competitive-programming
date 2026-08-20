@@ -19,11 +19,11 @@ int main() {
     }
     transform(arr.begin(),arr.end()-1,arr.begin()+1,rrr.begin(),[](ll a,ll b){
         return abs(a-b);
-    });
-    sort(all(rrr));
+    });     
+    sort(all(rrr));     
     if(err==rrr) cout<<"Jolly"<<endl;
     else         cout<<"Not jolly"<<endl;
+return 0; 
 }
-    return 0;
-
-}
+    
+    

@@ -1,0 +1,7 @@
+problem type 	detail		problem id		
+
+code mistake	added test cases	https://codeforces.com/gym/302977/problem/A
+
+dp mistake                  no of way to choose zero item	https://codeforces.com/gym/302977/problem/A
+
+wrong function           pow->1LL                     https://codeforces.com/gym/302977/problem/A
