@@ -2,28 +2,8 @@
 using namespace std;
 using ll = long long;
 #define endl '\n'
-pair<int, int> kadaneIndex(vector<ll> a) {
-    int cur = a[0];
-    int best = a[0];
-    int current_start = 0;
-    int best_start = 0;
-    int best_end = 0;
-    for (int i = 1; i < a.size(); i++) {
-        if (a[i] < a[i] + cur) {
-            cur = cur + a[i];
-        } else {
-            cur = a[i];
-            current_start = i;
-        }
-        if (best < cur) {
-            best = cur;
-            best_end = i;
-            best_start = current_start;
-        }
-    }
-    return make_pair(best_start, best_end);
 
-}
+
 void solve_case() {
     int n;
     cin >> n;
@@ -52,3 +32,27 @@ int main() {
     }
 }
 
+
+
+// pair<int, int> kadaneIndex(vector<ll> a) {
+//     int cur = a[0];
+//     int best = a[0];
+//     int current_start = 0;
+//     int best_start = 0;
+//     int best_end = 0;
+//     for (int i = 1; i < a.size(); i++) {
+//         if (a[i] < a[i] + cur) {
+//             cur = cur + a[i];
+//         } else {
+//             cur = a[i];
+//             current_start = i;
+//         }
+//         if (best < cur) {
+//             best = cur;
+//             best_end = i;
+//             best_start = current_start;
+//         }
+//     }
+//     return make_pair(best_start, best_end);
+
+// }
