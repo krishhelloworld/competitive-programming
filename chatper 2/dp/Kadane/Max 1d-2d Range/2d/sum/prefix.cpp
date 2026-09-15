@@ -1,4 +1,5 @@
-
+using ll = long long ;
+// CALCULATION OF SUM OF RECTANGLE
 vector<vector<long long>> buildPrefix(vector<vector<int>> &a) {
     int n = a.size();
     int m = a[0].size();
@@ -18,12 +19,48 @@ vector<vector<long long>> buildPrefix(vector<vector<int>> &a) {
     return p;
 }
 
-//get exact row and columns based query input and output
+//calculate the area from the preprocessed p
 long long rectangleSum(vector<vector<long long>> &p, int r1, int c1, int r2, int c2) {
     return p[r2 + 1][c2 + 1]
            - p[r1][c2 + 1]
            - p[r2 + 1][c1]
            + p[r1][c1];
+}
+//finding the max sum rect
+ll MaxSumSqr(vector<vector<int>> &arr, int&k) {
+    vector<vector<int>> p = arr;
+    ll ans = LLONG_MIN;
+    for (int k = 0; k <= min(n, m); k++) {
+        for (int i = k ; i <= n ; i++) {
+            for (int j = k ; j <= n; j++) {
+                ll sum = p[i - k][j - k] - p[i][j - k] - p[i - k][j] + p[i - k][j - k];
+                ans = max(ans, sum);
+            }
+        }
+    }
+    return ans;
+}
+
+ll MaxSumRect(vector<vector<int>> &arr, int&k) {
+    //USE 2d KADANE  rather than this prefix one
+    vector<vector<int>> p = arr;
+    ll ans = LLONG_MIN;
+    for (int top = 0; top < n; top++) {
+        for (int bottom = top; bottom < n; bottom++) {
+            for (int i = k ; i <= n ; i++) {
+                for (int j = k ; j <= n; j++) {
+                    long long sum =
+                        p[bottom + 1][right + 1]
+                        - p[top][right + 1]
+                        - p[bottom + 1][left]
+                        + p[top][left];
+
+                    ans = max(ans, sum);
+                }
+            }
+        }
+    }
+    return ans;
 }
 // ## QUERY FORMULA-; (after preprocessed area)
 // +BIG RECTANGLE Area -> r2+1 and c2+1 have this array area in it(+1 because of extra zeros column and row )
@@ -47,16 +84,16 @@ area of this part would be
         4 5 6
         7 8 9
 
-        +
+        -
         1 2 3
         4 5 6
 
-        +
+        -
         1 2
         4 5
         7 8
 
-        -
+        +
         1 2
         4 5
 //  ## AREA FORMULA-; (pre processing area)

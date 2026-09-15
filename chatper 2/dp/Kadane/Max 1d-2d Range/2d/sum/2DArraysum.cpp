@@ -1,4 +1,3 @@
-
 void kadaneMatrix() {
     int rows, cols;
     cin >> rows >> cols;
