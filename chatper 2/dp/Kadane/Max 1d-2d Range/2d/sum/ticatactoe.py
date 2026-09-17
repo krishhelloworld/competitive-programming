@@ -8,6 +8,12 @@ b=-1
 n="n"
 s="n"
 
+red='\033[31m'
+blue='\033[34m'
+reset='\033[0m'
+green='\033[35m'
+orange='\033[33m'
+purple='\033[32m'
 
 xarr=deque()
 oarr=deque()
@@ -17,7 +23,7 @@ win = [
     [6,7,8],
     [0,4,8],
     [2,4,6],
-    [1,3,6],
+    [0,3,6],
     [1,4,7],
     [2,5,8]
 ]
@@ -32,7 +38,7 @@ theNboard={0:'0', 1:'1', 2:'2',
           6:'6', 7:'7', 8:'8'}
 
 def printboard(board):
-    print()
+    print(orange)
     print(board[0]+'|'+board[1]+'|'+board[2])
     print('-+-+-')
     print(board[3]+'|'+board[4]+'|'+board[5])
@@ -66,12 +72,14 @@ def check(arr):
 
 def add(arr,pos,xoarr,xo,s):
     while pos in xoarr or pos in  arr:
-        print('already occupied')
+        print(reset)
+        print('---- already occupied---')
+        print(blue)
         pos=int(input())
     poparray(arr,xoarr)
     arr.append(pos)
-    theNboard[pos]=xo
-    theboard[pos]=xo
+    theNboard[pos]=blue+xo+orange
+    theboard[pos]=blue+xo+orange
     if s==n:
         printboard(theNboard)
     else:
@@ -79,17 +87,26 @@ def add(arr,pos,xoarr,xo,s):
 
 def poparray(arr,xoarr):
     if len(arr)>=3:
-        theNboard[arr[0]]=' '
-        theboard[arr[0]]=' '
+        theNboard[arr[0]]=str(arr[0])
+        theboard[arr[0]]=str(arr[0])
         arr.popleft()
 
 
 def process(arr,xo,ox):
     if check(arr):
-        print(ox,'wins')
+        print(red)
+        print('///////////////////////////////////')
+        print('          ',ox,'wins')
+        print('///////////////////////////////////')
+        print(blue)
         sys.exit()
     else:
+        if b%2==0:
+            print(purple)
+        else:
+            print(green)
         print(xo,' chance')
+        print(blue)
 
 
 if __name__=="__main__":
@@ -100,9 +117,15 @@ if __name__=="__main__":
     else:
         printboard(theboard)
 
-    print('x chance' )
+    print(green)
+    print('X         ',end='')
+    print(blue ,' VS           ',end='')
+    print(purple,'O')
+    print(green)
+    print('X chance' )
+    print(blue)
 
-    for line in  sys.stdin.buffer:
+    for line in  sys.stdin:
         for token in line.split():
             pos = int(token)
             b+=1
